@@ -31,6 +31,10 @@ public class Ciudadano {
         return this.contrasenia == psw;
     }
 
+    public boolean validarPassword(int psw) {
+        return validarIngreso(psw);
+    }
+
     // Cambia la contraseña convirtiendo el String a entero
     public void cambioPassword(String newPass) {
         try {
