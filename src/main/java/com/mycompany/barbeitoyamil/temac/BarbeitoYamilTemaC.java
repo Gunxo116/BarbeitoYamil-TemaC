@@ -11,7 +11,6 @@ public class BarbeitoYamilTemaC {
 
         SistemaObrasPublicas sistema = new SistemaObrasPublicas();
 
-        // 1. Crear trabajadores para las brigadas
         Trabajador t1 = new Trabajador(101, "Carlos Gomez", "Obrero");
         Trabajador t2 = new Trabajador(102, "Juan Perez", "Obrero");
         Trabajador t3 = new Trabajador(103, "Luis Lopez", "Obrero");
@@ -22,12 +21,10 @@ public class BarbeitoYamilTemaC {
         sistema.getTrabajadores().add(t3);
         sistema.getTrabajadores().add(jefe1);
 
-        // Conformar brigada "Alfa" con 3 obreros y 1 jefe
         List<Trabajador> obrerosAlfa = Arrays.asList(t1, t2, t3);
         Brigada b1 = new Brigada(1, "Alfa", "Pala, Compresora, Camioneta", "Asfalto frío, Gravilla", jefe1, obrerosAlfa);
         sistema.getBrigadas().add(b1);
 
-        // 2. CASO A: Reportar un bache
         System.out.println("\n--- CASO A: Reporte de Bache por un ciudadano ---");
         String reporte = sistema.reportarBache(
             "Yamil Barbeito", 
@@ -42,11 +39,9 @@ public class BarbeitoYamilTemaC {
         );
         System.out.println(reporte);
 
-        // Mostrar bache registrado
         Bache bache = sistema.getBaches().get(0);
         System.out.println("Bache Creado: " + bache.getValores());
 
-        // 3. CASO B: Crear Pedido de Obra
         System.out.println("\n--- CASO B: Creación de Pedido de Obra ---");
         InformeRotura informe = sistema.getInformes().get(0);
         PedidoObra pedido = sistema.crearPedidoObra(informe.getCodInf());
@@ -54,7 +49,6 @@ public class BarbeitoYamilTemaC {
             System.out.println("Pedido de Obra Nro " + pedido.getNumeroPedido() + " creado para ubicación: " + pedido.getUbicacion());
         }
 
-        // 4. CASO C: Asignar Brigada y finalizar reparación
         System.out.println("\n--- CASO C: Asignación de Brigada y Ejecución ---");
         System.out.println("Brigadas ociosas antes de asignar: " + sistema.informeBrigadasOciosas().size());
         
@@ -67,7 +61,6 @@ public class BarbeitoYamilTemaC {
 
         System.out.println("Estado actual del bache: " + bache.getEstado());
 
-        // 5. Demostración de métodos de listados
         System.out.println("\n=== REPORTES Y LISTADOS DEL SISTEMA ===");
         
         System.out.println("\n1. Informes por Ciudadano (Yamil Barbeito):");

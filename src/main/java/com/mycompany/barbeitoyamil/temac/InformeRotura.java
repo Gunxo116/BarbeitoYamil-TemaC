@@ -9,7 +9,7 @@ public class InformeRotura {
     private int codigoUrgencia;
     private Bache bache;
     private Ciudadano ciudadano;
-    private PedidoObra pedidoReparacion; // null initially
+    private PedidoObra pedidoReparacion;
 
     public InformeRotura(String codInf, LocalDate fechaInforme, String problema, int codigoUrgencia, Bache bache, Ciudadano ciudadano) {
         this.codInf = codInf;

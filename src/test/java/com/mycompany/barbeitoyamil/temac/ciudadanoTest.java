@@ -41,7 +41,7 @@ public class ciudadanoTest {
         System.out.println("Ejecutando testValidarUsr (Debe fallar)");
         int contra = 123456;
         boolean result = ciu.validarPassword(contra);
-        assertTrue(result); // Debe fallar porque la contraseña es 1212
+        assertTrue(result);
     }
 
     @Test

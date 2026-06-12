@@ -17,21 +17,18 @@ public class parameterCIUTest {
     private boolean resultadoEsperado;
     private String descripcion;
 
-    // Constructor que recibe los parámetros definidos
     public parameterCIUTest(String email, boolean resultadoEsperado, String descripcion) {
         this.email = email;
         this.resultadoEsperado = resultadoEsperado;
         this.descripcion = descripcion;
     }
 
-    // Método para validar el mail usando la expresión regular provista
     public static boolean ValidarMail(String email) {
         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher mather = pattern.matcher(email);
         return mather.find();
     }
 
-    // Colección de datos de prueba
     @Parameters
     public static Collection<Object[]> tomarDatos() {
         return Arrays.asList(new Object[][] {

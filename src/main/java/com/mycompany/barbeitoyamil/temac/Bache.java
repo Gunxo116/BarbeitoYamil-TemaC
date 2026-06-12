@@ -29,7 +29,6 @@ public class Bache {
         return "reparado".equalsIgnoreCase(this.estado);
     }
 
-    // Getters y Setters
     public int getId() {
         return id;
     }
